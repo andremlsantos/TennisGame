@@ -85,26 +85,26 @@
 
         private void NextTurn()
         {
-            for (var turn = 1; turn <= 2; turn++)
+            for (var playerTurn = 1; playerTurn <= 2; playerTurn++)
             {
-                var score = 0;
-                if (IsPlayer1Turn(turn))
+                var playersScore = 0;
+                if (IsPlayer1Turn(playerTurn))
                 {
-                    score = _player1.Score;
+                    playersScore = _player1.Score;
                 }
                 else
                 {
                     _score += "-";
-                    score = _player2.Score;
+                    playersScore = _player2.Score;
                 }
 
-                _score = BuildCurrentScore(score);
+                _score = BuildCurrentScore(playersScore);
             }
         }
 
-        private static bool IsPlayer1Turn(int round)
+        private static bool IsPlayer1Turn(int turn)
         {
-            return round == 1;
+            return turn == 1;
         }
 
         private string BuildCurrentScore(int score)
