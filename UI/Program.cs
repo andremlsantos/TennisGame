@@ -1,4 +1,5 @@
-﻿using Tennis;
+﻿using System;
+using Tennis;
 
 namespace UI
 {
@@ -16,8 +17,9 @@ namespace UI
             game.WonPoint(player1Name);
             game.WonPoint(player1Name);
 
-
             var score = game.GetScore();
+
+            Console.WriteLine(score);
         }
     }
 }
